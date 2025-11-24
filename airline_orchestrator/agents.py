@@ -225,7 +225,8 @@ Respond ONLY with valid JSON, no additional text.
         user_proxy = UserProxyAgent(
             name="user_proxy",
             human_input_mode="NEVER",
-            max_consecutive_auto_reply=0
+            max_consecutive_auto_reply=0,
+            code_execution_config=False  # Disable Docker/code execution
         )
         
         # Initiate chat and get response
@@ -334,7 +335,8 @@ Respond ONLY with valid JSON, no additional text.
         user_proxy = UserProxyAgent(
             name="user_proxy",
             human_input_mode="NEVER",
-            max_consecutive_auto_reply=0
+            max_consecutive_auto_reply=0,
+            code_execution_config=False  # Disable Docker/code execution
         )
         
         # Initiate chat and get response
