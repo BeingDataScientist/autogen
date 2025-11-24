@@ -1,0 +1,4 @@
+# Ensure config.json is never committed, even if accidentally added
+config.json filter=git-crypt diff=git-crypt
+config.json -text
+

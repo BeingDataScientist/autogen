@@ -1,0 +1,17 @@
+{
+    "openai_api_key": "your-openai-api-key-here",
+    "models": {
+        "diagnosis": "gpt-5.1-chat-latest",
+        "resolution": "gpt-5.1-chat-latest",
+        "monitoring": "gpt-5.1-codex-mini"
+    },
+    "orchestrator": {
+        "num_cycles": 8,
+        "anomaly_probability": 0.15
+    },
+    "ml_model": {
+        "n_samples": 1000,
+        "contamination": 0.1
+    }
+}
+
