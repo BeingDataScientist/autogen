@@ -33,16 +33,24 @@ class AgentBase:
             raise ValueError("OpenAI API key is required")
         
         # Create AutoGen agent
+        # Some models (like gpt-5.1-chat-latest) only support default temperature (1)
+        # Check if model supports custom temperature
+        models_without_temp = ["gpt-5.1-chat-latest", "gpt-5.1", "gpt-5.1-2025-11-13"]
+        llm_config = {
+            "config_list": [{
+                "model": model,
+                "api_key": api_key,
+            }]
+        }
+        
+        # Only add temperature if model supports it
+        if model not in models_without_temp:
+            llm_config["temperature"] = 0.3
+        
         self.agent = ConversableAgent(
             name=name,
             system_message=system_message,
-            llm_config={
-                "config_list": [{
-                    "model": model,
-                    "api_key": api_key,
-                }],
-                "temperature": 0.3,
-            },
+            llm_config=llm_config,
             human_input_mode="NEVER",
             max_consecutive_auto_reply=1,
         )
