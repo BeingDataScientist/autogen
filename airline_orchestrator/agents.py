@@ -226,7 +226,7 @@ Respond ONLY with valid JSON, no additional text.
             name="user_proxy",
             human_input_mode="NEVER",
             max_consecutive_auto_reply=0,
-            code_execution_config=False  # Disable Docker/code execution
+            code_execution_config={"use_docker": False}  # Disable Docker/code execution
         )
         
         # Initiate chat and get response
@@ -336,7 +336,7 @@ Respond ONLY with valid JSON, no additional text.
             name="user_proxy",
             human_input_mode="NEVER",
             max_consecutive_auto_reply=0,
-            code_execution_config=False  # Disable Docker/code execution
+            code_execution_config={"use_docker": False}  # Disable Docker/code execution
         )
         
         # Initiate chat and get response
