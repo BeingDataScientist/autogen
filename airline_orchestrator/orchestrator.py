@@ -10,13 +10,11 @@ from rich.layout import Layout
 
 from .telemetry_simulator import TelemetrySimulator
 from .ml_model import AnomalyDetector
-from .agents import (
-    TelemetryAgent,
-    AnomalyAgent,
-    DiagnosisAgent,
-    ResolutionAgent,
-    OrchestratorAgent
-)
+from .telemetry_agent import TelemetryAgent
+from .anomaly_agent import AnomalyAgent
+from .diagnosis_agent import DiagnosisAgent
+from .resolution_agent import ResolutionAgent
+from .orchestrator_agent import OrchestratorAgent
 
 console = Console()
 

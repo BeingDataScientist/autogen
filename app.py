@@ -1,16 +1,24 @@
 """
 Main Entry Point - Initializes environment and starts orchestrator
+Merged from run.py and airline_orchestrator/main.py
 """
 
 import os
 import sys
 from pathlib import Path
+
+# Apply typing patch for Python 3.9.0 compatibility (not needed for Python 3.12.3+)
+try:
+    import airline_orchestrator.typing_patch
+except ImportError:
+    pass
+
 from rich.console import Console
 from rich.panel import Panel
 from rich import print as rprint
 
-from .config_loader import get_config
-from .orchestrator import PipelineOrchestrator
+from airline_orchestrator.config_loader import get_config
+from airline_orchestrator.orchestrator import PipelineOrchestrator
 
 console = Console()
 

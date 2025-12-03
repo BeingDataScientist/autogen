@@ -1,3 +1,10 @@
+
+cd ~/autogen
+git checkout -- airline_orchestrator/agents.py
+git pull origin main
+
+
+
 # Airline Multi-Agent Orchestration System
 
 A complete Python-based multi-agent system demonstrating AutoGen + MCP (Model Context Protocol) patterns for real-time aircraft telemetry anomaly detection, diagnosis, and resolution.
